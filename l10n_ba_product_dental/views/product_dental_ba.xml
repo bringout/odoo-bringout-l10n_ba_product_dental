@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="product_template_manufacturer_form_view" model="ir.ui.view">
+        <field name="name">product.template.form - product_dental_ba</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='inventory']" position="after">
+                <page name="dental_ba" string="Stomatološki materijal">
+                    <group name="main" string="Glavni podaci">
+                        <field
+                            name="manufacturer_id"
+                            context="{'res_partner_search_mode': 'supplier'}"
+                        />
+                    </group>
+                    <div>
+                        <label for="klasa" />:
+                        <field name="klasa" />
+                        <span> </span>
+                        <label for="keep_temp_from" />
+                        <field name="keep_temp_from" style="width:40px;" />
+                        do:
+                        <field name="keep_temp_to" style="width:40px;" />
+                    </div>
+
+                    <group name="manufacturer_pname" string="Ostali podaci proizvođača">                    
+                        <field name="manufacturer_pname" />
+                        <field name="manufacturer_pref"/>
+                        <field name="manufacturer_purl" widget="url" />
+                    </group>
+
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record
+        id="product_product_view_form_easy_inherit_product_dental_ba"
+        model="ir.ui.view"
+    >
+        <field name="name">
+            product.product.view.form.easy.inherit.product.dental_ba
+        </field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_variant_easy_edit_view" />
+        <field name="arch" type="xml">
+            <sheet position="inside">
+                <group name="dental_ba" string="Stomatološki materijal">
+                    <group>
+                        <field
+                            name="manufacturer_id"
+                            context="{'res_partner_search_mode': 'supplier'}"
+                        />
+                        <field name="manufacturer_pname" />
+                    </group>
+                    <group>
+                        <field name="manufacturer_pref" />
+                        <field name="manufacturer_purl" widget="url" />
+                    </group>
+                    <group>
+                        <field name="klasa" />
+                    </group>
+                     <group>
+                        <field name="keep_temp_from" />
+                        -
+                        <field name="keep_temp_to" />
+                    </group>
+                </group>
+
+            </sheet>
+        </field>
+    </record>
+</odoo>
