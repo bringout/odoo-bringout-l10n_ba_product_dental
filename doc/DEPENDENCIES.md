@@ -2,6 +2,6 @@
 
 This addon depends on:
 
-- [product](../../../../../oca-ocb-sale/odoo-bringout-oca-ocb-product)
-- [sale](../../../../../oca-ocb-sale/odoo-bringout-oca-ocb-sale)
-- [account](../../../../../oca-ocb-accounting/odoo-bringout-oca-ocb-account)
+- [product](https://github.com/bringout/oca-ocb-sale)
+- [sale](https://github.com/bringout/oca-ocb-sale)
+- [account](https://github.com/bringout/oca-ocb-accounting)
